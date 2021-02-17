@@ -20,7 +20,7 @@ app.get('', (req, res) => {
 app.post('/afd_pdf', (req, res) => {
   const reqBody = req.body;
   console.log('You provided Customer Name:' + reqBody.CUSTNAME + ', Location:' + reqBody.LOCATION + ', Model:' + reqBody.MODEL
-    + ', WordOrder:' + reqBody.WORKORDER + ', Rev:' + reqBody.REV + ', Rel:' + reqBody.REL + ', serail:' + reqBody.SERAIL);
+    + ', WordOrder:' + reqBody.WORKORDER + ', Rev:' + reqBody.REV + ', Rel:' + reqBody.REL + ', serail:' + reqBody.SERIAL);
 
     run().catch(err => console.log(err));
 
@@ -42,7 +42,7 @@ app.post('/afd_pdf', (req, res) => {
     workField.setText(reqBody.WORKORDER);
     revField.setText(reqBody.REV);
     relField.setText(reqBody.REL);
-    serialField.setText(reqBody.SERAIL);
+    serialField.setText(reqBody.SERIAL);
     //res.setHeader('Content-disposition', 'attachment; filename=' + reqBody.form + '_' + reqBody.workorder + '.pdf');
     res.setHeader('Content-disposition', 'inline; filename=' + reqBody.FORM + '_' + reqBody.WORKORDER + '.pdf');
     res.setHeader('Content-type', 'application/pdf');
